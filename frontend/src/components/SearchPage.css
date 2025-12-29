@@ -1,6 +1,8 @@
 .search-page {
     min-height: 100vh;
     animation: fadeIn 0.6s ease-out;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header */
@@ -57,6 +59,7 @@
     gap: 30px;
     position: relative;
     z-index: 2;
+    flex: 1;
 }
 
 /* Search Section */
