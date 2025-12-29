@@ -5,6 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import propertiesData from '../data/properties.json';
 import PropertyCard from './PropertyCard';
 import FavouritesList from './FavouritesList';
+import Footer from './Footer';
 import { filterProperties } from '../utils/searchUtils';
 import './SearchPage.css'
 
@@ -293,6 +294,7 @@ const SearchPage = ({
                     )}
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };
