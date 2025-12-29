@@ -2,6 +2,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import ImageGallery from 'react-image-gallery';
 import 'react-tabs/style/react-tabs.css';
+import Footer from './Footer';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import './PropertyPage.css';
 
@@ -134,6 +135,7 @@ const PropertyPage = ({ property, onBack, addToFavourites, isFavourite }) => {
                     </Tabs>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };
