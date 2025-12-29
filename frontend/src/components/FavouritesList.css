@@ -1,0 +1,229 @@
+.favourites-list {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: var(--shadow-xl);
+    transition: var(--transition);
+    animation: slideIn 0.6s ease-out 0.2s backwards;
+    min-height: 200px;
+}
+
+.favourites-list.drag-over {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
+    border: 2px dashed var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+}
+
+/* Favourites Header */
+.favourites-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.favourites-title {
+    font-size: 20px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.favourites-icon {
+    font-size: 22px;
+    animation: pulse 2s infinite;
+}
+
+.clear-btn {
+    padding: 8px 16px;
+    background: #fee2e2;
+    color: #dc2626;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.clear-btn:hover {
+    background: #fecaca;
+    transform: scale(1.05);
+}
+
+/* Favourites Empty State */
+.favourites-empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Favourites Items */
+.favourites-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.favourite-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    background: var(--background);
+    border-radius: 12px;
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+    animation: slideIn 0.3s ease-out;
+}
+
+.favourite-item:hover {
+    background: #f3f4f6;
+    transform: translateX(4px);
+    box-shadow: var(--shadow-sm);
+}
+
+.favourite-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.favourite-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.favourite-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+}
+
+.favourite-location {
+    font-size: 13px;
+    color: var(--text-primary);
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.favourite-bedrooms {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.remove-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    color: #dc2626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    opacity: 0;
+}
+
+.favourite-item:hover .remove-btn {
+    opacity: 1;
+}
+
+.remove-btn:hover {
+    background: #fee2e2;
+    transform: scale(1.1);
+}
+
+/* Scrollbar for favourites list */
+.favourites-items::-webkit-scrollbar {
+    width: 6px;
+}
+
+.favourites-items::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.favourites-items::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+
+.favourites-items::-webkit-scrollbar-thumb:hover {
+    background: var(--text-light);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .favourites-list {
+        min-height: auto;
+    }
+
+    .favourites-items {
+        max-height: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    .favourite-item {
+        flex-direction: column;
+    }
+
+    .favourite-image {
+        width: 100%;
+        height: 160px;
+    }
+
+    .remove-btn {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .favourites-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .favourites-title {
+        font-size: 18px;
+    }
+
+    .favourites-items {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .favourites-list {
+        padding: 20px;
+    }
+
+    .favourite-price {
+        font-size: 16px;
+    }
+
+    .favourite-location {
+        font-size: 12px;
+    }
+}
