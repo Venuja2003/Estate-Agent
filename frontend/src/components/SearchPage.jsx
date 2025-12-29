@@ -260,6 +260,7 @@ const SearchPage = ({
                         onPropertyClick={onPropertyClick}
                         removeFromFavourites={removeFromFavourites}
                         clearFavourites={clearFavourites}
+                        addToFavourites={addToFavourites}
                     />
                 </div>
 
