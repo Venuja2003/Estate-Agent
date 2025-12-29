@@ -5,7 +5,8 @@ const FavouritesList = ({
                             favourites,
                             onPropertyClick,
                             removeFromFavourites,
-                            clearFavourites
+                            clearFavourites,
+                            addToFavourites
                         }) => {
     const [{ isOver }, drop] = useDrop(() => ({
         accept: 'PROPERTY',
@@ -14,12 +15,13 @@ const FavouritesList = ({
             if (!favourites.find(fav => fav.id === item.property.id)) {
                 // This will be handled by the parent component
                 // We need to pass this up
+                addToFavourites(item.property);
             }
         },
         collect: (monitor) => ({
             isOver: monitor.isOver()
         })
-    }));
+    }), [favourites, addToFavourites]);
 
     const formatPrice = (price) => {
         return new Intl.NumberFormat('en-GB', {
