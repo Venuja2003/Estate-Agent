@@ -131,7 +131,7 @@
 
 5. **Open in browser**
    ```
-   http://localhost:5713
+   http://localhost:5173
    ```
 
 ---
