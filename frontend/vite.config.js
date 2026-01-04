@@ -5,4 +5,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
     base: "/Estate-Agent/",
+    test: {
+        globals: true,
+        environment: 'jsdom',
+        setupFiles: './vitest.setup.js',
+    }
 })
