@@ -1,4 +1,4 @@
-# PropertyFinder - React Property Search Application
+# PropertyFinder - React Property Finder Application
 
 <div align="center">
 
